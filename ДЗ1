@@ -1,0 +1,96 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+struct stack {
+  float elem[MAX];
+  int top;
+};
+
+void init(struct stack *stk) {
+  stk->top = 0;
+}
+
+void push(struct stack *stk, float f) {
+	
+  if(stk->top < MAX) {
+    stk->elem[stk->top] = f;
+    stk->top++;
+  } else
+    printf("error\n", stk->top);
+    
+}
+
+float pop(struct stack *stk) {
+  float elem;
+  
+  if((stk->top) > 0)
+  {
+    stk->top--;
+    
+    elem = stk->elem[stk->top];
+    
+    return elem;
+  }
+  else
+  {
+  	
+    printf("pustoi!\n");
+    
+    return 0;
+  }
+}
+
+int isempty(struct stack *stk) {
+	
+  if(stk->top == 0)    
+  return 1;
+  
+  else 
+  return 0;
+  
+}
+
+void stkPrint(struct stack *stk) {
+  int i;
+  
+  i=stk->top; // i - количество элементов в стеке
+  
+  if(isempty(stk) == 1) return; // стек пуст
+  
+  do {
+  	
+    i--;
+    printf("%f\n", stk->elem[i]);
+    
+  } while(i>0);
+}
+
+int main() {
+  struct stack *stk;
+  int i,n;
+  float elem;
+  
+  stk = (struct stack*)malloc(sizeof(struct stack));
+  init(stk);
+  
+  printf("enter how a lot element: ");
+  scanf("%d", &n);
+  
+  for(i=0; i<n; i++) {
+  	
+    printf("enter element %d:", i);
+    
+    scanf("%f", &elem);
+    
+    push(stk,elem);
+  }
+  
+  stkPrint(stk);
+  	
+    printf("delete %f\n", pop(stk));
+    
+	stkPrint(stk);
+	
+  return 0;
+}
