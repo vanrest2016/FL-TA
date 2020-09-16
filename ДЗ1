@@ -68,29 +68,39 @@ void stkPrint(struct stack *stk) {
 
 int main() {
   struct stack *stk;
-  int i,n;
+  int i,n,v;
   float elem;
   
   stk = (struct stack*)malloc(sizeof(struct stack));
   init(stk);
   
-  printf("enter how a lot element: ");
-  scanf("%d", &n);
+  	while(v!=4){
+		printf("1)ADD\n2)DELETE\n3)PRINT\n");
+  		scanf("%d", &v);
   
-  for(i=0; i<n; i++) {
-  	
-    printf("enter element %d:", i);
-    
-    scanf("%f", &elem);
-    
-    push(stk,elem);
-  }
+  switch(v){
+			case 1:
+			    printf("enter element:");
+    			scanf("%f", &elem);
+    			push(stk,elem);
+			break;
+			
+			case 2:
+			    printf("delete %f\n", pop(stk));	
+			break;
+			
+			case 3:
+			    stkPrint(stk);
+			break;
+			
+			case 4:
+				exit(0);
+			break;
   
-  stkPrint(stk);
-  	
-    printf("delete %f\n", pop(stk));
-    
-	stkPrint(stk);
+		}
+
+	}
 	
-  return 0;
+	return 0;
+	
 }
