@@ -26,22 +26,8 @@ void delete(char* arr, char* str) {
 }
 
 
-int foo(int* a) {
-	
-	*a=5;
-	
-
-}
-
 int main(void)
 {
-	
-    int fl = 0;
-    
-    foo(&fl);
-    
-    printf("%d\n",fl);
-    
     int i, j;
     printf("Choose graph - 1 or digraph - 2\n");
     scanf("%d", &fl);
@@ -188,9 +174,8 @@ int main(void)
     
     
 	printf("%s\n", arr);
-	
 	printf(" ");
-    gets(strk);
+        gets(strk);
     
 	delete(arr, strk);
 	
