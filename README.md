@@ -25,7 +25,7 @@
 ```
 ## Структурная схема алгоритма
 
-![Alt-текст](https://github.com/vanrest2016/FL-TA/blob/master/Схем.png)
+![Alt-текст](https://github.com/vanrest2016/FL-TA/blob/master/Схема.png)
 
 ## Результат работы:
 ![Alt-текст](https://github.com/vanrest2016/FL-TA/blob/master/Результат%20работы.jpg)
